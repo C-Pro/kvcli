@@ -78,6 +78,13 @@ func main() {
 			}
 
 			tx.Delete(parts[1])
+		case "count":
+			if len(parts) != 2 {
+				fmt.Println("COUNT should have exactly one argument")
+				continue
+			}
+
+			fmt.Println(tx.Count(parts[1]))
 		}
 	}
 }
